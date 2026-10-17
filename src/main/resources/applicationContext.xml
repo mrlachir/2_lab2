@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd">
+    <!-- Explicit XML definitions are independent of annotation component scanning/profiles. -->
+    <bean id="dao" class="dao.DaoImpl"/>
+    <bean id="dao2" class="dao.DaoImpl2"/>
+    <bean id="metier" class="metier.MetierImpl">
+        <property name="dao" ref="dao2"/>
+    </bean>
+</beans>
